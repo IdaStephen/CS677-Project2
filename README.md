@@ -4,6 +4,8 @@ SHAP was introduced by Lundberg et al. who proposed a unified approach to interp
 
 ![SHAP overview](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap1.png)
 
+![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
+
 
 ## Shapley Values: ## 
 Shapley values -- a method from coalitional game theory -- tells us how to fairly distribute the "payout" among the features. <br/>
