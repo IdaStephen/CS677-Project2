@@ -19,6 +19,18 @@ The goal of SHAP is to explain the prediction of an instance by computing the co
 
 5. Local interpretability — each observation gets its own set of SHAP values. This greatly increases its transparency. We can explain why a case receives its prediction and the contributions of the predictors. Traditional variable importance algorithms only show the results across the entire population but not on each individual case. The local interpretability enables us to pinpoint and contrast the impacts of the factors.
 
+# SHAP Feature Importance
+The idea behind SHAP feature importance is simple: Features with large absolute Shapley values are important. Since we want the global importance, we average the absolute Shapley values per feature across the data. Next, we sort the features by decreasing importance and plot them. SHAP feature importance is an alternative to permutation feature importance. There is a big difference between both importance measures: Permutation feature importance is based on the decrease in model performance. SHAP is based on magnitude of feature attributions. 
+The feature importance plot is useful, but contains no information beyond the importances. For a more informative plot, we will next look at the summary plot.
+
+# SHAP Summary Plot
+The summary plot combines feature importance with feature effects. Each point on the summary plot is a Shapley value for a feature and an instance. The position on the y-axis is determined by the feature and on the x-axis by the Shapley value. The color represents the value of the feature from low to high. Overlapping points are jittered in y-axis direction, so we get a sense of the distribution of the Shapley values per feature. The features are ordered according to their importance. In the summary plot, we see first indications of the relationship between the value of a feature and the impact on the prediction. But to see the exact form of the relationship, we have to look at SHAP dependence plots.
+
+# SHAP Dependence Plot
+SHAP feature dependence might be the simplest global interpretation plot: 
+1) Pick a feature. 
+2) For each data instance, plot a point with the feature value on the x-axis and the corresponding Shapley value on the y-axis. 
+
 ## Disadvantages of Using SHAP ##
 
 1. KernelSHAP is slow. This makes KernelSHAP impractical to use when you want to compute Shapley values for many instances. Also all global SHAP methods such as SHAP feature importance require computing Shapley values for a lot of instances.
