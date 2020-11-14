@@ -4,12 +4,14 @@ SHAP was introduced by Lundberg et al. who proposed a unified approach to interp
 
 ![SHAP overview](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap1.png)
 
-![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
+
 
 
 ## Shapley Values: ## 
 Shapley values -- a method from coalitional game theory -- tells us how to fairly distribute the "payout" among the features. <br/>
-The goal of SHAP is to explain the prediction of an instance by computing the contribution of each feature to the prediction. The feature values of a data instance act as players in a coalition. Shapley values tell us how to fairly distribute the "payout" (= the prediction) among the features. A player can be an individual feature value, e.g. for tabular data. A player can also be a group of feature values. For example to explain an image, pixels can be grouped to super pixels and the prediction distributed among them.  <br/>
+The goal of SHAP is to explain the prediction of an instance by computing the contribution of each feature to the prediction. The feature values of a data instance act as players in a coalition. Shapley values tell us how to fairly distribute the "payout" (= the prediction) among the features. A player can be an individual feature value, e.g. for tabular data. A player can also be a group of feature values. For example to explain an image, pixels can be grouped to super pixels and the prediction distributed among them.  
+
+![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
 
 ## Benefits of SHAP: ##
 
