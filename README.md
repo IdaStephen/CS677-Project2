@@ -13,6 +13,11 @@ The goal of SHAP is to explain the prediction of an instance by computing the co
 
 ![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
 
+## Why is SHAP more popular and reliable technique? ##
+1. Local Accuracy
+The explanation model should match the original model.
+
+
 ## Benefits of SHAP: ##
 
 1. The SHAP values can be calculated for any tree-based model, while other methods use linear regression or logistic regression models as the surrogate models.
