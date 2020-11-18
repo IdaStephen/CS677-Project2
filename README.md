@@ -2,7 +2,7 @@
 
 SHAP was introduced by Lundberg et al. who proposed a unified approach to interpreting and explaining model predictions. SHAP is based on Shapley Values which is a solution concept in co-operative game theory. 
 
-![SHAP overview](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap1.png)
+![SHAP overview](https://github.com/IdaStephen/CS677-SHAP/blob/main/SHAP-equation.png)
 
 
 
