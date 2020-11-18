@@ -17,6 +17,12 @@ The goal of SHAP is to explain the prediction of an instance by computing the co
 1. Local Accuracy
 The explanation model should match the original model.
 
+2. Missingness:
+If the simplified inputs represent feature presence, then missingness requires features missing in the original input to have no impact.
+
+3. Consistency:
+Consistency states that if a model changes so that some simplified input’s contribution increases or stays the same regardless of the other inputs, that input’s attribution should not decrease.
+
 
 ## Benefits of SHAP: ##
 
