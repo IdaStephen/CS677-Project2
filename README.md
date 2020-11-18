@@ -23,6 +23,12 @@ If the simplified inputs represent feature presence, then missingness requires f
 3. Consistency:
 Consistency states that if a model changes so that some simplified input’s contribution increases or stays the same regardless of the other inputs, that input’s attribution should not decrease.
 
+4. Efficiency:
+As the foundation of SHAP values is based on computational game theory, this is the only method that can failry distribute the gain of the feature.
+
+5. Global comparison:
+SHAP values provide a way to compare the feature importance at a global level. You can also change the dataset from global to a subset dataset of interest.
+
 
 ## Benefits of SHAP: ##
 
