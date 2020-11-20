@@ -11,7 +11,7 @@ SHAP was introduced by Lundberg et al. who proposed a unified approach to interp
 Shapley values -- a method from coalitional game theory -- tells us how to fairly distribute the "payout" among the features. <br/>
 The goal of SHAP is to explain the prediction of an instance by computing the contribution of each feature to the prediction. The feature values of a data instance act as players in a coalition. Shapley values tell us how to fairly distribute the "payout" (= the prediction) among the features. 
 
-# Example:
+### Example:
 
 A company with two employees Alice and Bob
 
@@ -25,6 +25,7 @@ A company with two employees Alice and Bob
 
 What shouuld the bonuses be?
 
+![SHAP values](https://github.com/IdaStephen/CS677-SHAP/blob/main/shapvalues.png)
 
 
 ![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
