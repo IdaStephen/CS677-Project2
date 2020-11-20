@@ -27,6 +27,22 @@ What shouuld the bonuses be?
 
 ![SHAP values](https://github.com/IdaStephen/CS677-SHAP/blob/main/shapvalues.png)
 
+The axioms can be intuitively understood as follows;
+
+[Efficiency] The bonuses add up to the total profit
+
+[Dummy] An employee that does not contribute gets no profit
+
+[Symmetry] Symmetric employees get equal profit
+
+[Linearity] Suppose the total profit comes from two separate departments. Then the bonus allocated to each employee should be the sum of the bonuses that they would receive from each of the departments individually.
+
+### Shapley Value algorithm
+
+It is based on the concept of marginal contribution of an employee to the profit. Consider all possible orderings of employees. For each ordering, we introduce the employees in that order and note change in total profit at each step. The average marginal contribution of an employee across all orderings is the employee’s Shapley value.
+
+Suppose there are three employees and the order is Alice, Bob, Carol. Then we first add Alice to the company and note the increase in profit. This is the marginal contribution of Alice.  Then we add Bob with Alice already present, and note the increase in profit. This is the marginal contribution of Bob, and so on. We repeat this for all possible orderings and compute the average marginal contribution.
+
 
 ![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
 
