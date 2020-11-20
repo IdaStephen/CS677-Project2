@@ -43,6 +43,8 @@ It is based on the concept of marginal contribution of an employee to the profit
 
 Suppose there are three employees and the order is Alice, Bob, Carol. Then we first add Alice to the company and note the increase in profit. This is the marginal contribution of Alice.  Then we add Bob with Alice already present, and note the increase in profit. This is the marginal contribution of Bob, and so on. We repeat this for all possible orderings and compute the average marginal contribution.
 
+![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shapleyvalues2.png)
+
 
 ![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
 
