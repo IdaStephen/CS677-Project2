@@ -54,6 +54,7 @@ The explanation model should match the original model.
 
 2. Missingness:
 If the simplified inputs represent feature presence, then missingness requires features missing in the original input to have no impact.
+Missingness says that a missing feature gets an attribution of zero. A missing feature could -- in theory -- have an arbitrary Shapley value without hurting the local accuracy property, since it is multiplied with x' = 0. The Missingness property enforces that missing features get a Shapley value of 0. In practice this is only relevant for features that are constant.
 
 3. Consistency:
 Consistency states that if a model changes so that some simplified input’s contribution increases or stays the same regardless of the other inputs, that input’s attribution should not decrease.
