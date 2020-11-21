@@ -57,7 +57,7 @@ If the simplified inputs represent feature presence, then missingness requires f
 Missingness says that a missing feature gets an attribution of zero. A missing feature could -- in theory -- have an arbitrary Shapley value without hurting the local accuracy property, since it is multiplied with x' = 0. The Missingness property enforces that missing features get a Shapley value of 0. In practice this is only relevant for features that are constant.
 
 3. Consistency:
-Consistency states that if a model changes so that some simplified input’s contribution increases or stays the same regardless of the other inputs, that input’s attribution should not decrease.
+The consistency property says that if a model changes so that the marginal contribution of a feature value increases or stays the same (regardless of other features), the Shapley value also increases or stays the same. From Consistency the Shapley properties Linearity, Dummy and Symmetry follow
 
 4. Efficiency:
 As the foundation of SHAP values is based on computational game theory, this is the only method that can failry distribute the gain of the feature.
