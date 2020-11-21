@@ -49,8 +49,11 @@ Suppose there are three employees and the order is Alice, Bob, Carol. Then we fi
 ![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap_header.png)
 
 ## Why is SHAP more popular and reliable technique? ##
-1. Local Accuracy
+1. Local Accuracy:
 The explanation model should match the original model.
+If you define ϕ0 = Ex(^f(x))and set all x' to 1, this is the Shapley efficiency property. Only with a different name and using the coalition vector.
+
+![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/local_accuracy.png)
 
 2. Missingness:
 If the simplified inputs represent feature presence, then missingness requires features missing in the original input to have no impact.
