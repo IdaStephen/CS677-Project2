@@ -81,6 +81,18 @@ SHAP values provide a way to compare the feature importance at a global level. Y
 
 5. Local interpretability — each observation gets its own set of SHAP values. This greatly increases its transparency. We can explain why a case receives its prediction and the contributions of the predictors. Traditional variable importance algorithms only show the results across the entire population but not on each individual case. The local interpretability enables us to pinpoint and contrast the impacts of the factors.
 
+## KernelSHAP
+KernelSHAP estimates for an instance x the contributions of each feature value to the prediction. KernelSHAP consists of 5 steps:
+
+1. Sample coalitions z′k∈{0,1}M,k∈{1,…,K} (1 = feature present in coalition, 0 = feature absent).
+2. Get prediction for each z′k by first converting z′k to the original feature space and then applying model f:f(hx(z′k))
+3. Compute the weight for each  z′k with the SHAP kernel.
+4. Fit weighted linear model.
+5. Return Shapley values ϕk, the coefficients from the linear model.
+
+![SHAP header](https://github.com/IdaStephen/CS677-SHAP/blob/main/shap-superpixel.jpg)
+
+The big difference to LIME is the weighting of the instances in the regression model. LIME weights the instances according to how close they are to the original instance. The more 0's in the coalition vector, the smaller the weight in LIME. SHAP weights the sampled instances according to the weight the coalition would get in the Shapley value estimation. Small coalitions (few 1's) and large coalitions (i.e. many 1's) get the largest weights. The intuition behind it is: We learn most about individual features if we can study their effects in isolation. If a coalition consists of a single feature, we can learn about the features' isolated main effect on the prediction. If a coalition consists of all but one feature, we can learn about this features' total effect (main effect plus feature interactions). If a coalition consists of half the features, we learn little about an individual features contribution, as there are many possible coalitions with half of the features.
 ## TreeSHAP
 
 Lundberg et. al proposed TreeSHAP, a variant of SHAP for tree-based machine learning models such as decision trees, random forests and gradient boosted trees. TreeSHAP was introduced as a fast, model-specific alternative to KernelSHAP, but it turned out that it can produce unintuitive feature attributions.
@@ -97,7 +109,8 @@ The summary plot combines feature importance with feature effects. Each point on
 ## SHAP Dependence Plot
 SHAP feature dependence might be the simplest global interpretation plot: 
 1) Pick a feature. 
-2) For each data instance, plot a point with the feature value on the x-axis and the corresponding Shapley value on the y-axis. 
+2) For each data instance, plot a point with the feature value on the x-axis and the corresponding Shapley value on the y-axis.
+SHAP dependence plots are an alternative to partial dependence plots and accumulated local effects. While PDP and ALE plot show average effects, SHAP dependence also shows the variance on the y-axis. Especially in case of interactions, the SHAP dependence plot will be much more dispersed in the y-axis.
 
 ## Disadvantages of Using SHAP ##
 
